@@ -1,5 +1,8 @@
 defmodule OsmanthusPress.Repo do
-  use Ecto.Repo,
-    otp_app: :osmanthus_press,
-    adapter: Ecto.Adapters.Postgres
+  use AshPostgres.Repo, otp_app: :osmanthus_press
+
+  # installs commonly used extensions by Ash
+  def installed_extensions do
+    ["ash-functions", "uuid-ossp", "citext"]
+  end
 end
