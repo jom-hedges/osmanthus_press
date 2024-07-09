@@ -8,6 +8,7 @@
 import Config
 
 config :osmanthus_press,
+  ash_domains: [OsmanthusPress.Blog],
   ecto_repos: [OsmanthusPress.Repo],
   generators: [timestamp_type: :utc_datetime]
 
