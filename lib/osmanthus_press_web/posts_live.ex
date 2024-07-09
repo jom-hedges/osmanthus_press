@@ -8,7 +8,7 @@ defmodule OsmanthusPressWeb.PostsLive do
     ~H"""
     <h2 class="text-xl text-center">Blog</h2>
     <div class="my-4">
-      <div :if={Enum.empy?(@posts)} class="font-bold text-center">
+      <div :if={Enum.empty?(@posts)} class="font-bold text-center">
         No posts here yet
       </div>
       <ol class="list-decimal"> 
@@ -55,7 +55,7 @@ defmodule OsmanthusPressWeb.PostsLive do
   end
 
   def handle_event("delete_post", %{"post-id" => post_id}, socket) do
-    post_id |> Blog.get_post!() \> Blog.destroy_post!()
+    post_id |> Blog.get_post!() |> Blog.destroy_post!()
     posts = Blog.list_posts!()
 
     {:noreply, assign(socket, posts: posts, post_selector: post_selector(posts))}
@@ -65,7 +65,7 @@ defmodule OsmanthusPressWeb.PostsLive do
     Blog.create_post(%{title: title})
     posts = Blog.list_posts!()
 
-    {:noreply, assign}
+    {:noreply, assign(socket, posts: posts, post_selector: post_selector(posts))}
   end
 
   def handle_event("update_post", %{"form" => form_params}, socket) do
