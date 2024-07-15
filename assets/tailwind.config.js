@@ -9,7 +9,8 @@ module.exports = {
   content: [
     "./js/**/*.js",
     "../lib/osmanthus_press_web.ex",
-    "../lib/osmanthus_press_web/**/*.*ex"
+    "../lib/osmanthus_press_web/**/*.*ex",
+    "../deps/ash_authentication_phoenix/**/*.*ex",
   ],
   theme: {
     extend: {
