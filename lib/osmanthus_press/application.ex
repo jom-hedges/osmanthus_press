@@ -24,6 +24,7 @@ defmodule OsmanthusPress.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: OsmanthusPress.Supervisor]
     Supervisor.start_link(children, opts)
+    {AshAuthentication.Supervisor, otp_app: :osmanthus_press}
   end
 
   # Tell Phoenix to update the endpoint configuration
