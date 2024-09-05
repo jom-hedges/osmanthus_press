@@ -1,6 +1,6 @@
 defmodule OsmanthusPress.Accounts.Token do
   use Ash.Resource,
-    domain: Example.Accounts,
+    domain: OsmanthusPress.Accounts,
     data_layer: AshPostgres.DataLayer,
     # If using policies, enable the policy authorizer:
     # authorizers: [Ash.Policy.Authorizer]
