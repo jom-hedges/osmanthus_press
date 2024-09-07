@@ -63,7 +63,8 @@ defmodule OsmanthusPress.MixProject do
       {:ash_postgres, "~> 2.0"},
       {:ash_phoenix, "~> 2.0"},
       {:ash_authentication, "~> 4.0"},
-      {:ash_authentication_phoenix, "~> 2.0"}
+      {:ash_authentication_phoenix, "~> 2.0"},
+      {:spark, "~> 2.2.7"}
     ]
   end
 

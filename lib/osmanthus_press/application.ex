@@ -14,6 +14,8 @@ defmodule OsmanthusPress.Application do
       {Phoenix.PubSub, name: OsmanthusPress.PubSub},
       # Start the Finch HTTP client for sending emails
       {Finch, name: OsmanthusPress.Finch},
+      # Start AshAuthentication Supervisor
+      {AshAuthentication.Supervisor, otp_app: :osmanthus_press},
       # Start a worker by calling: OsmanthusPress.Worker.start_link(arg)
       # {OsmanthusPress.Worker, arg},
       # Start to serve requests, typically the last entry
@@ -24,7 +26,6 @@ defmodule OsmanthusPress.Application do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: OsmanthusPress.Supervisor]
     Supervisor.start_link(children, opts)
-    {AshAuthentication.Supervisor, otp_app: :osmanthus_press}
   end
 
   # Tell Phoenix to update the endpoint configuration
