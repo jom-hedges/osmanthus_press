@@ -19,7 +19,7 @@ defmodule OsmanthusPressWeb.Router do
 
     get "/", PageController, :home
 
-    get "/posts", PostController, only: [:index, :show, :new, :create, :edit, :update, :delete]
+    get "/posts", PostController, only: [:index, :show, :new, :create]
   end
 
   # Other scopes may use custom stacks.

@@ -18,7 +18,7 @@ defmodule OsmanthusPress.PostController do
     render(conn, "show.html", changeset: changeset)
   end
 
-  def create(conn, %{"post" => post_params}) do
+  def create_post(conn, %{"post" => post_params}) do
     case Blog.create!(Post, post_params) do
       {:ok, post} -> 
         redirect(conn, to: Routes.post_path(conn, :show, post))
