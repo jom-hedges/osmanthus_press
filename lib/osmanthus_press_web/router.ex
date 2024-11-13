@@ -18,6 +18,7 @@ defmodule OsmanthusPressWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/catalogue" PageController, :index
 
     get "/posts", PostController, only: [:index, :show, :new, :create]
   end
