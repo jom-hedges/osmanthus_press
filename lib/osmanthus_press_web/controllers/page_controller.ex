@@ -6,8 +6,4 @@ defmodule OsmanthusPressWeb.PageController do
     # so skip the default app layout.
     render(conn, :home, layout: false)
   end
-
-  def catalogue(conn, _params) do
-    render(conn, :catalogue, layout: false)
-  end
 end

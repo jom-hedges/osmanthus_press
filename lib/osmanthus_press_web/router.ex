@@ -18,9 +18,9 @@ defmodule OsmanthusPressWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/catalogue" PageController, :index
+    get "/catalogue", PageController, :home
 
-    get "/posts", PostController, only: [:index, :show, :new, :create]
+    live  "/posts", PostsLive
   end
 
   # Other scopes may use custom stacks.
