@@ -18,8 +18,8 @@ defmodule OsmanthusPressWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/catalogue", PageController, :home
-
+    
+    live "/catalogue", CatalogueLive
     live  "/posts", PostsLive
   end
 
