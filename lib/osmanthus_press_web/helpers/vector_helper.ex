@@ -1,7 +1,7 @@
 defmodule OsmanthusPress.Helpers.VectorHelper do
   import Phoenix.HTML
 
-  def render_svg(file_name, opts \\ 0) do
+  def render_svg(file_name, _opts \\ 0) do
     file_path = Path.join(:code.priv_dir(:osmanthus_press), "#static/icons/#{file_name}.svg")
 
     case File.read(file_path) do
