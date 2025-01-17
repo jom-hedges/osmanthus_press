@@ -2,6 +2,7 @@ defmodule OsmanthusPress.PostController do
   use OsmanthusPressWeb, :controller
   alias OsmanthusPress.Blog.Blog
   alias OsmanthusPress.Blog.Post
+  alias OsmanthusPressWeb.Router.Helpers, as: Routes
 
   def index(conn, _params) do
     posts = Blog.read!(Post)

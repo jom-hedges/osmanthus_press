@@ -21,6 +21,8 @@ defmodule OsmanthusPressWeb.Router do
     
     live "/catalogue", CatalogueLive
     live  "/posts", PostsLive
+
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.
