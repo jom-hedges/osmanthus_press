@@ -1,5 +1,6 @@
 defmodule OsmanthusPress.Blog do
   use Ash.Domain
+  use Ash.Api
 
   resources do
     resource OsmanthusPress.Blog.Post do
@@ -10,5 +11,7 @@ defmodule OsmanthusPress.Blog do
       define :destroy_post, action: :destroy
       define :get_post, args: [:id], action: :by_id
     end
+
+    registry OsmanthusPress.registry
   end
 end
